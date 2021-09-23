@@ -62,7 +62,11 @@ class UserModel(db.Model):
         return UserModel.query.all()
 
     @staticmethod
-    def get_user_by_id(id):
+    def get_user_by_email(email):
+        return UserModel.query.get(email)
+
+    @staticmethod
+    def get_one_user(id):
         return UserModel.query.get(id)
 
     def __repr__(self):
